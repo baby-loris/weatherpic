@@ -8,7 +8,7 @@ var config = require('configs/api');
  * @returns {Number} Temperature in C
  */
 function convertToCelsius(temperature) {
-    return temperature - 273.15
+    return temperature - 273.15;
 }
 
 /**

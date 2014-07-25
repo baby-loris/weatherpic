@@ -1,4 +1,5 @@
 var env = require('../../configs/current/env');
+var util = require('util');
 
 module.exports = function (err, req, res, next) {
     /* jshint unused: vars */
@@ -10,4 +11,4 @@ module.exports = function (err, req, res, next) {
             util.format('<h2>%s</h2><pre>%s</pre>', err.message, err.stack) :
             '')
     );
-}
+};

@@ -14,12 +14,20 @@
   "license": "MIT",
   "dependencies": {
     "baby-loris-api": "0.0.4",
+    "dot": "1.0.1",
     "express": "4.6.1",
     "log": "1.4.0",
-    "dot": "1.0.1",
     "vow-asker": "0.6.6"
   },
   "devDependencies": {
+    "analyze": "0.0.14",
+    "git-hooks": "0.0.7",
+    "jscs": "1.5.8",
+    "jshint": "2.5.2",
+    "jshint-groups": "0.6.2",
     "supervisor": "0.0.6"
+  },
+  "scripts": {
+    "test": "make validate"
   }
 }

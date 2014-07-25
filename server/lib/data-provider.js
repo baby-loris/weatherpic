@@ -1,5 +1,3 @@
-var Api = require('baby-loris-api');
-var config = require('configs/api');
 var api = require('./api');
 var vow = require('vow');
 
@@ -9,7 +7,7 @@ function getTags(weather) {
         weather.main.temp >= 20 && 'heat',
         weather.main.temp < 0 && 'cold',
         weather.main.temp < -10 && 'frost',
-        weather.clouds.all != 0 && 'clouds',
+        weather.clouds.all !== 0 && 'clouds',
         weather.wind.speed < 10 && 'windless',
         weather.wind.speed > 10 && 'wind',
         weather.wind.speed > 15 && 'storm'
