@@ -7,7 +7,7 @@ all: npm validate build
 npm:
 	npm install
 
-validate: lint
+validate: lint test
 
 # Lint js files
 lint:
@@ -15,8 +15,11 @@ lint:
 	@$(NODE) $(NODE_MODULES_BIN)/jscs .
 	@$(NODE) $(NODE_MODULES_BIN)/analyze report -r errors -v return-type:param-type
 
+test:
+	@echo test
+
 build:
-	echo build
+	@echo build
 
 dev:
 	@$(SUPERVISOR) -w server,configs,api -p server/app.js
@@ -24,4 +27,4 @@ dev:
 clean:
 	echo clean
 
-.PHONY: all npm validate lint build dev clean
+.PHONY: all npm validate lint test build dev clean

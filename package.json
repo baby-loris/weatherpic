@@ -1,7 +1,6 @@
 {
   "name": "baby-loris-api-example",
   "description": "Example of using baby-loris-api",
-  "version": "0.0.0",
   "author": "Alexander Tarmolov <tarmolov@gmail.com>",
   "homepage": "https://github.com/tarmolov/baby-loris-api-example",
   "repository": {
@@ -14,10 +13,12 @@
   "license": "MIT",
   "dependencies": {
     "baby-loris-api": "0.0.4",
-    "dot": "1.0.1",
     "express": "4.6.1",
     "log": "1.4.0",
-    "vow-asker": "0.6.6"
+    "mustache": "0.8.2",
+    "vow-asker": "0.6.6",
+    "vow": "0.4.5",
+    "vow-fs": "0.3.2"
   },
   "devDependencies": {
     "analyze": "0.0.14",

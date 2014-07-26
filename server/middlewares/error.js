@@ -1,4 +1,4 @@
-var env = require('../../configs/current/env');
+var env = require('configs/env');
 var util = require('util');
 
 module.exports = function (err, req, res, next) {
