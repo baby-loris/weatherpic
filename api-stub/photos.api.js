@@ -6,4 +6,4 @@ module.exports = require('../api/photos.api.js')
                 url: 'https://farm4.staticflickr.com/3893/14556276189_3407ba104f_b.jpg'
             }
         ];
-    })
+    });

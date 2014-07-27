@@ -1,0 +1,17 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": "nofunc",
+    "maxlen": 120,
+    "newcap": true,
+    "noarg": true,
+    "browser": true,
+    "predef": ["modules"],
+    "noempty": true,
+    "nonew": true,
+    "quotmark": "single",
+    "trailing": true,
+    "undef": true,
+    "unused": true
+}

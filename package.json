@@ -21,14 +21,24 @@
     "vow-fs": "0.3.2"
   },
   "devDependencies": {
-    "analyze": "0.0.14",
     "git-hooks": "0.0.7",
     "jscs": "1.5.8",
     "jshint": "2.5.2",
     "jshint-groups": "0.6.2",
-    "supervisor": "0.0.6"
+    "gulp": "~3.8.6",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-concat": "~2.3.4",
+    "gulp-uglify": "~0.3.1",
+    "gulp-sourcemaps": "~1.1.0",
+    "gulp-cached": "~1.0.1",
+    "gulp-remember": "~0.2.0",
+    "del": "~0.1.1",
+    "gulp-jscs": "~1.0.0",
+    "gulp-jshint": "~1.8.0",
+    "jshint-stylish": "~0.4.0"
   },
   "scripts": {
-    "test": "make validate"
+    "start": "gulp dev",
+    "test": "gulp test"
   }
 }
