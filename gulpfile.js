@@ -14,8 +14,22 @@ var del = require('del');
 
 var assets = {
     scripts: {
-        client: ['client/**/*.js'],
-        server: ['server/**/*.js', 'api/**/*.js', 'api-stub/**/*.js']
+        client: [
+            'client/**/*.js'
+        ],
+        clientVendors: [
+            'node_modules/ym/modules.js',
+            'node_modules/mustache/mustache.js',
+            'node_modules/vow/vow.min.js',
+            'node_modules/inherit/lib/inherit.js',
+            'node_modules/baby-loris-api/blocks/common/baby-loris-api/baby-loris-api.js',
+            'node_modules/baby-loris-api/blocks/common/baby-loris-api-error/baby-loris-api-error.js'
+        ],
+        server: [
+            'server/**/*.js',
+            'api/**/*.js',
+            'api-stub/**/*.js'
+        ]
     },
     styles: ['client/**/*.styl']
 };
@@ -27,7 +41,7 @@ gulp.task('clean', function (cb) {
 gulp.task('build', ['scripts', 'styles']);
 
 gulp.task('scripts', ['clean'], function () {
-    return gulp.src(assets.scripts.client)
+    return gulp.src([].concat(assets.scripts.clientVendors, assets.scripts.client))
         .pipe(sourcemaps.init())
         .pipe(cached('scripts'))
         .pipe(uglify())
@@ -66,14 +80,11 @@ gulp.task('lint-server', function (cb) {
         .pipe(jscs());
 });
 
-gulp.task('dev', function () {
+gulp.task('dev', ['build'], function () {
     nodemon({
         script: 'server/boot.js',
         ext: 'html js styl',
         ignore: ['./.git/**', './build/**', './node_modules/**']
     })
-    .on('change', ['build'])
-    .on('restart', function () {
-        console.log('restarted!')
-    })
+    .on('change', ['build']);
 });

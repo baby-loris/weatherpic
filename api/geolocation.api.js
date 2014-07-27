@@ -26,11 +26,11 @@ module.exports = new ApiMethod('geolocation')
                 }
 
                 if (!json.city) {
-                    throw new ApiError('GEOLOCATION_ERROR', 'City doesn\'t found');
+                    throw new ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
                 }
 
                 if (!json.lat && !json.lon) {
-                    throw new ApiError('GEOLOCATION_ERROR', 'Empty coordinates');
+                    throw new ApiError('GEOLOCATION_ERROR', 'Cannot find coordinates for your city');
                 }
 
                 return json;

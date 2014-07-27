@@ -1,8 +1,8 @@
 var cluster = require('cluster');
 
-var env = require('../configs/current/env');
+var env = require('configs/env');
 var app = require('./app');
-var logger = require('./utils/logger');
+var logger = require('lib/logger');
 
 if (cluster.isMaster) {
     var workersCount = env.workersCount;

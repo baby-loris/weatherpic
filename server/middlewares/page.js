@@ -8,7 +8,10 @@ module.exports = function (req, res) {
         fs.read(__dirname + '/../templates/page.html'),
         dataProvider.get(req)
     ]).spread(function (template, data) {
-        var html = Mustache.render(template.toString(), data);
+        var html = Mustache.render(template.toString(), {
+            error: data.error,
+            config: JSON.stringify(data)
+        });
         res.end(html);
     });
 };

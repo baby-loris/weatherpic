@@ -4,7 +4,7 @@ var vow = require('vow');
 function getTags(weather) {
     return [
         weather.main.temp > 0 && weather.main.temp < 25 && 'warm',
-        weather.main.temp >= 20 && 'heat',
+        weather.main.temp >= 25 && 'hot',
         weather.main.temp < 0 && 'cold',
         weather.main.temp < -10 && 'frost',
         weather.clouds.all !== 0 && 'clouds',
@@ -24,7 +24,8 @@ module.exports = {
                     .then(function (weather) {
                         d.resolve({
                             city: location.city,
-                            tags: getTags(weather)
+                            slogan: 'Photo based on weather in your city',
+                            tags: [].concat('weather', 'nature', getTags(weather))
                         });
                     });
             })

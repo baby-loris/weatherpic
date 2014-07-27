@@ -8,27 +8,16 @@
         <link rel="stylesheet" href="//yastatic.net/bootstrap/3.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/build/styles.min.css">
     </head>
-    <body role="document">
-        <!--[if lt IE 9]>
-        <div class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-warning-sign"></span>
-            You are using an <strong>outdated</strong> browser.
-            Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-        </div>
-        <![endif]-->
-        <div class="center-block photo-container">
-            <span class="glyphicon glyphicon-refresh photo-update-control"></span>
-            <div class="photo-information">
-                <h1>Moscow</h1>
-                <h4>Photo based on weather in your city</h4>
-                <p class="photo-information__tags">
-                    <span class="glyphicon glyphicon-tag"></span>
-                    <span>weather, clouds, warm</span>
-                </p>
-            </div>
-            <img src="https://farm4.staticflickr.com/3893/14556276189_3407ba104f_b.jpg"/>
-        </div>
-
+    <body class="page" role="document">
+        <table class="page__wrapper">
+        <tr>
+            <td id="container" class="page__container">
+                <div class="spinner"></div>
+            </td>
+        </tr>
+        </table>
+        <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
         <script src="/build/scripts.min.js"></script>
+        <script type="text/json" id="config">{{&config}}</script>
     </body>
 </html>

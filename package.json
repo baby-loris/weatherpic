@@ -12,13 +12,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "baby-loris-api": "0.0.4",
+    "baby-loris-api": "0.0.5",
     "express": "4.6.1",
     "log": "1.4.0",
     "mustache": "0.8.2",
     "vow-asker": "0.6.6",
     "vow": "0.4.5",
-    "vow-fs": "0.3.2"
+    "vow-fs": "0.3.2",
+    "body-parser": "~1.5.2"
   },
   "devDependencies": {
     "del": "~0.1.1",
@@ -40,7 +41,7 @@
     "jshint-stylish": "~0.4.0"
   },
   "scripts": {
-    "start": "gulp dev",
+    "start": "node ./server.js",
     "test": "gulp build test"
   }
 }

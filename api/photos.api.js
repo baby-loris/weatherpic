@@ -19,6 +19,9 @@ function getPhotoUrl(data) {
         .replace('{size}', 'b');
 }
 
+/**
+ * @see https://www.flickr.com/services/api/flickr.photos.search.html
+ */
 module.exports = new ApiMethod('photos')
     .setDescription('Returns photos of kittens using Flickr API')
     .addParam({
