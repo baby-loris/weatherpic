@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- '0.10'
+deploy:
+  provider: heroku
+  api_key:
+    secure: BUEsrKFpfbKAh/AorZMrRuyTLz0p7iK/DLRpDIfW9hxZZXcz3B9iEOfxKe0u8Z0cZmrRMUQlIbYojq3bxREsdfx02naNJ7/Dm7wX5jfiMdrxDunADR57/hLdB33dFMd3hyUcIQrj4VFIwbwSkUSkrZpxXpFVTcoSPCErvxBeQus=
+  app: weatherpic
+  on:
+    repo: tarmolov/weatherpic
