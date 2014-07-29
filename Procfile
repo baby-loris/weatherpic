@@ -1,1 +1,1 @@
-web: node server/boot.js
+web: node server/app.js

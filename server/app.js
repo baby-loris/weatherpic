@@ -17,14 +17,7 @@ app
     .use('/api/:method?', apiMiddleware(config.modulesPath))
     .get('/', pageMiddleware)
     .use(notFoundMiddleware)
-    .use(errorMiddleware);
-
-exports.start = function () {
-    app.listen(port, function () {
+    .use(errorMiddleware)
+    .listen(port, function () {
         logger.info('app started on %s', port);
     });
-};
-
-if (!module.parent) {
-    exports.start();
-}

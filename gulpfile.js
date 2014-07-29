@@ -82,7 +82,7 @@ gulp.task('lint-server', function (cb) {
 
 gulp.task('dev', ['build'], function () {
     nodemon({
-        script: 'server/boot.js',
+        script: 'server/app.js',
         ext: 'html js styl',
         ignore: ['./.git/**', './build/**', './node_modules/**']
     })
