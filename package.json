@@ -44,7 +44,7 @@
     "git-hooks": "0.0.7"
   },
   "scripts": {
-    "postinstall": "gulp build && ln -snf production/ configs/current",
+    "postinstall": "gulp build && [[ $NODE_ENV == 'production' ]] && ln -snf production/ configs/current || exit 0",
     "start": "gulp dev",
     "test": "gulp build test"
   }
