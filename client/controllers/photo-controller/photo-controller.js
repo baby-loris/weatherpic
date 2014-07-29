@@ -14,7 +14,6 @@ modules.define(
         ErrorView
     ) {
 
-    //TODO: Add reload photo logic
     var PhotoController = inherit({
         __constructor: function (parentDomNode, data) {
             this._parentDomNode = parentDomNode;
@@ -44,10 +43,8 @@ modules.define(
             this._view.getDomNode().find('.photo__reload').on('click', this._showNextPhoto.bind(this));
         },
 
-        _onFail: function () {
-            this._error = new ErrorView({
-                message: 'Cannot load a photo. Try again later'
-            });
+        _onFail: function (error) {
+            this._error = new ErrorView(error);
             this._error.getDomNode().appendTo(this._parentDomNode);
         }
     });

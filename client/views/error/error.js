@@ -20,6 +20,9 @@ modules.define(
         '</div>'
     ].join('');
 
+    /**
+     * Error message.
+     */
     var ErrorView = inherit({
         __constructor: function (data) {
             this._domNode = $(Mustache.render(TEMPLATE, data));

@@ -1,6 +1,21 @@
 var api = require('./api');
 var vow = require('vow');
 
+/**
+ * List of extra tags should be used for photos search.
+ */
+var EXTRA_TAGS = ['weather', 'nature'];
+
+/**
+ * An application slogan.
+ */
+var SLOGAN = 'Photo based on weather in your city';
+
+/**
+ * Generates list of tags based on the weather data.
+ * @param {Object} weather Weather data.
+ * @returns {Array} tags
+ */
 function getTags(weather) {
     return [
         weather.main.temp > 0 && weather.main.temp < 25 && 'warm',
@@ -15,6 +30,12 @@ function getTags(weather) {
 }
 
 module.exports = {
+    /**
+     * Returns an initial data for the application.
+     *
+     * @param {express.Request} req
+     * @returns {vow.Promise}
+     */
     get: function (req) {
         var d = vow.defer();
 
@@ -24,8 +45,8 @@ module.exports = {
                     .then(function (weather) {
                         d.resolve({
                             city: location.city,
-                            slogan: 'Photo based on weather in your city',
-                            tags: [].concat('weather', 'nature', getTags(weather))
+                            slogan: SLOGAN,
+                            tags: [].concat(EXTRA_TAGS, getTags(weather))
                         });
                     });
             })
