@@ -10,20 +10,15 @@
   "bugs": {
     "url": "https://github.com/tarmolov/baby-loris-api-example/issues"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "license": "MIT",
   "dependencies": {
     "baby-loris-api": "0.0.5",
-    "express": "4.6.1",
-    "log": "1.4.0",
-    "mustache": "0.8.2",
-    "vow-asker": "0.6.6",
-    "vow": "0.4.5",
-    "vow-fs": "0.3.2",
-    "body-parser": "~1.5.2"
-  },
-  "devDependencies": {
+    "body-parser": "~1.5.2",
     "del": "~0.1.1",
-    "git-hooks": "0.0.7",
+    "express": "4.6.1",
     "gulp": "~3.8.6",
     "gulp-cached": "~1.0.1",
     "gulp-concat": "~2.3.4",
@@ -38,10 +33,19 @@
     "jscs": "1.5.8",
     "jshint": "2.5.2",
     "jshint-groups": "0.6.2",
-    "jshint-stylish": "~0.4.0"
+    "jshint-stylish": "~0.4.0",
+    "log": "1.4.0",
+    "mustache": "0.8.2",
+    "vow": "0.4.5",
+    "vow-asker": "0.6.6",
+    "vow-fs": "0.3.2"
+  },
+  "devDependencies": {
+    "git-hooks": "0.0.7"
   },
   "scripts": {
-    "start": "node ./server.js",
+    "postinstall": "gulp build && ln -snf production/ configs/current",
+    "start": "gulp dev",
     "test": "gulp build test"
   }
 }
