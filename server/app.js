@@ -6,9 +6,9 @@ var errorMiddleware = require('./middlewares/error');
 var notFoundMiddleware = require('./middlewares/404');
 var pageMiddleware = require('./middlewares/page');
 
-var port = require('configs/env').port;
-var config = require('configs/api');
-var logger = require('lib/logger');
+var port = require('../configs/current/env').port;
+var config = require('../configs/current/api');
+var logger = require('./lib/logger');
 
 app
     .enable('trust proxy')

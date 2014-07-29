@@ -1,4 +1,4 @@
-var dataProvider = require('lib/data-provider');
+var dataProvider = require('../lib/data-provider');
 var Mustache = require('mustache');
 var vow = require('vow');
 var fs = require('vow-fs');

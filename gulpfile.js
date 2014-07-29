@@ -11,6 +11,7 @@ var stylish = require('jshint-stylish');
 var stylus = require('gulp-stylus');
 var minifyCSS = require('gulp-minify-css');
 var del = require('del');
+var fs = require('fs');
 
 var assets = {
     scripts: {
@@ -79,6 +80,16 @@ gulp.task('lint-server', function (cb) {
         .pipe(jshint.reporter('fail'))
         .pipe(jscs());
 });
+
+gulp.task('production', function (cb) {
+    if (process.env.NODE_ENV === 'production') {
+        del('configs/current', {force: true}, function () {
+            fs.symlink('production', 'configs/current');
+        });
+    }
+});
+
+
 
 gulp.task('dev', ['build'], function () {
     nodemon({

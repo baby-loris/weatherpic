@@ -1,7 +1,7 @@
 var ApiMethod = require('baby-loris-api/lib/api-method');
 var ApiError = require('baby-loris-api/lib/api-error');
 var ask = require('vow-asker');
-var config = require('configs/api');
+var config = require('../configs/current/api');
 
 /**
  * @param {Number} temperature Temperature in F

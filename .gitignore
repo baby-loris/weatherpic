@@ -1,4 +1,2 @@
-/node_modules/*
-!/node_modules/configs
-!/node_modules/lib
+/node_modules
 /build
