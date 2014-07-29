@@ -18,7 +18,7 @@ module.exports = {
     get: function (req) {
         var d = vow.defer();
 
-        api.exec('geolocation', {ip: req.hostname})
+        api.exec('geolocation', {ip: req.ip})
             .then(function (location) {
                 return api.exec('weather', {lat: location.lat, lon: location.lon})
                     .then(function (weather) {
