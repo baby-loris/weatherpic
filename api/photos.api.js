@@ -33,6 +33,11 @@ module.exports = new ApiMethod('photos')
         type: 'Array',
         descriptions: 'Photos with one or more of the tags listed will be returned'
     })
+    .addParam({
+        name: 'page',
+        type: 'Array',
+        descriptions: 'Number page of results'
+    })
     .setAction(function (params) {
         return ask({
             url: config.flickrPhotoApi.host,
@@ -44,6 +49,7 @@ module.exports = new ApiMethod('photos')
                 api_key: config.flickrPhotoApi.key,
                 format: 'json',
                 nojsoncallback: 1,
+                page: params.page || 1,
                 per_page: 10
             },
             timeout: config.timeout
