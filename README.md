@@ -27,9 +27,9 @@ server                  Server-side code
 
 ### Technical details
 Weatherpic uses three external APIs:
-  * [Geolocation API from ip-api.com](http://ip-api.com/).
-  * [OpenWeatherMap API](http://openweathermap.org/api).
-  * [Flick Photo API](https://www.flickr.com/services/api/).
+  * [Geolocation API from ip-api.com](http://ip-api.com/)
+  * [OpenWeatherMap API](http://openweathermap.org/api)
+  * [Flick Photo API](https://www.flickr.com/services/api/)
 
 First of them are used on the server side and the last one — on the client side. But you can use all of them on both sides (baby-loris-api makes it easy to access);
 
