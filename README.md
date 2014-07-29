@@ -1,4 +1,4 @@
-# weatherpic
+# weatherpic [![Build Status](https://travis-ci.org/tarmolov/weatherpic.svg?branch=master)](https://travis-ci.org/tarmolov/weatherpic)
 Weatherpic is an example of using [baby-loris-api](https://github.com/tarmolov/baby-loris-api).
 
 The application detects your geolocation by IP address, then checks out weather in your city and finally shows you a photo from Flickr API based on weather in your city.
