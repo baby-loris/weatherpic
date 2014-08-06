@@ -2,14 +2,14 @@ modules.define(
     'app',
     [
         'inherit',
-        'config',
+        'data-provider',
         'photo-controller',
         'error'
     ],
     function (
         provide,
         inherit,
-        config,
+        dataProvider,
         PhotoController,
         ErrorView
     ) {
@@ -20,12 +20,18 @@ modules.define(
         },
 
         start: function () {
-            if (!config.error) {
-                this._photo = new PhotoController(this._parentDomNode, config);
-            } else {
-                this._error = new ErrorView(config.error);
-                this._error.getDomNode().appendTo(this._parentDomNode);
-            }
+            dataProvider.get()
+                .then(this._onDataLoad.bind(this))
+                .fail(this._onFailed.bind(this));
+        },
+
+        _onDataLoad: function (data) {
+            this._photo = new PhotoController(this._parentDomNode, data);
+        },
+
+        _onFailed: function (error) {
+            this._error = new ErrorView(error);
+            this._error.getDomNode().appendTo(this._parentDomNode);
         }
     });
 
