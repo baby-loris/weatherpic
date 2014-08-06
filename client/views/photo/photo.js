@@ -17,7 +17,7 @@ modules.define(
             '<span class="glyphicon glyphicon-refresh photo__reload"></span>',
             '<div class="photo__profile">',
                 '<h1>{{city}}</h1>',
-                '<h4>{{slogan}}</h4>',
+                '<h4>Photo based on weather in your city</h4>',
                 '<p class="photo__tags">',
                     '<span class="glyphicon glyphicon-tag"></span>',
                     '{{#tags}}',
