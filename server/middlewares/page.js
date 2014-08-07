@@ -10,7 +10,8 @@ module.exports = function (req, res) {
     ]).spread(function (template, data) {
         var html = Mustache.render(template.toString(), {
             error: data.error,
-            config: JSON.stringify(data)
+            config: JSON.stringify(data),
+            rnd: Math.random()
         });
         res.end(html);
     });
