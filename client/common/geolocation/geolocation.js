@@ -16,7 +16,7 @@ modules.define(
         },
 
         /**
-         * Returns geoloation information.
+         * Returns geolocation information.
          * @see https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
          *
          * @returns {vow.Promise}
