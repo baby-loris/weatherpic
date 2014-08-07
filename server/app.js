@@ -13,7 +13,7 @@ var logger = require('./lib/logger');
 app
     .enable('trust proxy')
     .use('/build', express.static(__dirname + '/../build'))
-    .use(bodyParser.urlencoded({extended: false}))
+    .use(bodyParser.json())
     .use('/api/:method?', apiMiddleware(config.modulesPath))
     .get('/', pageMiddleware)
     .use(notFoundMiddleware)
