@@ -62,7 +62,8 @@ There are two supported environments:
 The application gets configs from the path ```configs/current``` which is symlink to the specific configs. By default ```development``` configs will be used. But when npm packages is installed with ```--production``` flag (heroku uses this flag), the symlink will be changed to ```production``` configs.
 
 Why did I stub all API methods for development environment?
-It makes your development process much more quicker and comfortable. Stubbed API provide data instantly and you don't have to wait response of external service and don't depend on network delays. I strongly recommend you use this approach in your projects.
+
+It makes development process much more quicker and comfortable. Stubbed API provide data instantly and you don't have to wait response of external service and don't depend on network delays. I strongly recommend you use this approach in your projects.
 
 ### Contribution
 If you've noticed any bug or have an idea, let me know ;)
