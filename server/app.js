@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var apiMiddleware = require('baby-loris-api/lib/middleware');
-var errorMiddleware = require('./middlewares/error');
+var errorMiddleware = require('../configs/current/errorhandler');
 var notFoundMiddleware = require('./middlewares/404');
 var pageMiddleware = require('./middlewares/page');
 
