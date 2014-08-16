@@ -81,12 +81,11 @@ gulp.task('lint-server', function (cb) {
         .pipe(jscs());
 });
 
-gulp.task('production', function (cb) {
-    if (process.env.NODE_ENV === 'production') {
-        del('configs/current', {force: true}, function () {
-            fs.symlink('production', 'configs/current');
-        });
-    }
+gulp.task('environment', function (cb) {
+    var environment = process.env.NODE_ENV || 'development';
+    del('configs/current', {force: true}, function () {
+        fs.symlink(environment, 'configs/current');
+    });
 });
 
 gulp.task('dev', ['build'], function () {
