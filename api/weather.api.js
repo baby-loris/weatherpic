@@ -18,12 +18,12 @@ function convertToCelsius(temperature) {
 module.exports = new ApiMethod('weather')
     .setDescription('Returns a weather forecast for the coordinates')
     .addParam({
-        name: 'lat',
+        name: 'latitude',
         description: 'Latitude',
         required: true
     })
     .addParam({
-        name: 'lon',
+        name: 'longitude',
         description: 'Longtitude',
         required: true
     })
@@ -31,8 +31,8 @@ module.exports = new ApiMethod('weather')
         return ask({
             url: config.openWeatherMapApi.host,
             query: {
-                lat: params.lat,
-                lon: params.lon,
+                lat: params.latitude,
+                lon: params.longitude,
                 format: 'json'
             },
             timeout: config.timeout

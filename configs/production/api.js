@@ -1,6 +1,7 @@
 module.exports = {
-    ipApi: {
-        host: 'http://ip-api.com/json/'
+    yandexLocator: {
+        host: 'http://api.lbs.yandex.net/geolocation',
+        key: 'ACtg_1MBAAAAxnk2egMAP1f6oolGj4d4UewZqpnozpbWkpcAAAAAAAAAAACENYjK6hlkCqvhIYmbak2bS8X8OQ=='
     },
     openWeatherMapApi: {
         host: 'http://api.openweathermap.org/data/2.5/weather',

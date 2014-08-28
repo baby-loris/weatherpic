@@ -13,12 +13,12 @@ module.exports = {
 
         api.exec('geolocation', {ip: req.ip})
             .then(function (location) {
-                return api.exec('weather', {lat: location.lat, lon: location.lon})
+                return api.exec('weather', {latitude: location.latitude, longitude: location.longitude})
                     .then(function (weather) {
                         api.exec('tags', {weather: weather})
                             .then(function (tags) {
                                 d.resolve({
-                                    city: location.city || weather.name,
+                                    city: weather.name,
                                     tags: tags
                                 });
                             });

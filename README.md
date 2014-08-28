@@ -27,7 +27,7 @@ server                  Server-side code
 
 ### Technical details
 Weatherpic uses the several external APIs:
-  * [Geolocation API from ip-api.com](http://ip-api.com/)
+  * [Yandex.Locatore](http://api.yandex.ru/locator/)
   * [OpenWeatherMap API](http://openweathermap.org/api)
   * [Flick Photo API](https://www.flickr.com/services/api/)
   * and [Browser Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) in some cases.

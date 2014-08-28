@@ -4,7 +4,7 @@ var ask = require('vow-asker');
 var config = require('../configs/current/api');
 
 /**
- * @see http://ip-api.com/
+ * @see api.yandex.ru/locator/
  */
 module.exports = new ApiMethod('geolocation')
     .setDescription('Returns geolocation based on IP address')
@@ -15,20 +15,29 @@ module.exports = new ApiMethod('geolocation')
     })
     .setAction(function (params) {
         return ask({
-            url: config.ipApi.host + params.ip,
+            url: config.yandexLocator.host,
+            method: 'POST',
+            bodyEncoding: 'multipart',
+            allowGzip: true,
+            body: {
+                json: {
+                    common: {
+                        version: '1.0',
+                        api_key: config.yandexLocator.key
+                    },
+                    ip: {
+                        address_v4: params.ip
+                    }
+                }
+            },
             timeout: config.timeout
         })
             .then(function (response) {
                 var json = JSON.parse(response.data);
 
-                if (json.status === 'fail') {
-                    throw new ApiError('GEOLOCATION_ERROR', json.message);
-                }
-
-                if (!json.city || !json.lat && !json.lon) {
-                    throw new ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
-                }
-
-                return json;
+                return json.position;
+            })
+            .fail(function () {
+                throw new ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
             });
     });

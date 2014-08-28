@@ -31,8 +31,8 @@ modules.define(
                     function (position) {
                         var coords = position.coords;
                         d.resolve({
-                            lat: coords.latitude,
-                            lon: coords.longitude
+                            latitude: coords.latitude,
+                            longitude: coords.longitude
                         });
                     },
                     function (error) {

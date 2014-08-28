@@ -42,7 +42,7 @@ modules.define(
 
         _getDataBasedOnUserLocation: function () {
             return geolocation.get().then(function (location) {
-                return api.exec('weather', {lat: location.lat, lon: location.lon})
+                return api.exec('weather', {latitude: location.latitude, longitude: location.longitude})
                     .then(function (weather) {
                         return api.exec('tags', {weather: weather})
                             .then(function (tags) {
