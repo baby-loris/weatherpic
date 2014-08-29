@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "baby-loris-api": "0.0.8",
+    "baby-loris-api": "0.0.9",
     "body-parser": "1.5.2",
     "del": "0.1.1",
     "express": "4.6.1",
