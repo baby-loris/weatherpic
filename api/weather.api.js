@@ -1,5 +1,4 @@
-var ApiMethod = require('baby-loris-api/lib/api-method');
-var ApiError = require('baby-loris-api/lib/api-error');
+var bla = require('baby-loris-api');
 var ask = require('vow-asker');
 var config = require('../configs/current/api');
 
@@ -15,7 +14,7 @@ function convertToCelsius(temperature) {
  * @see http://openweathermap.org/current
  * @see http://openweathermap.org/weather-data#current
  */
-module.exports = new ApiMethod('weather')
+module.exports = new bla.ApiMethod('weather')
     .setDescription('Returns a weather forecast for the coordinates')
     .addParam({
         name: 'latitude',
@@ -40,7 +39,7 @@ module.exports = new ApiMethod('weather')
             var json = JSON.parse(response.data);
 
             if (json.cod !== 200) {
-                throw new ApiError('WEATHER_ERROR', json.message);
+                throw new bla.ApiError('WEATHER_ERROR', json.message);
             }
 
              // convert to Celsius

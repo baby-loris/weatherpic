@@ -1,12 +1,11 @@
-var ApiMethod = require('baby-loris-api/lib/api-method');
-var ApiError = require('baby-loris-api/lib/api-error');
+var bla = require('baby-loris-api');
 var ask = require('vow-asker');
 var config = require('../configs/current/api');
 
 /**
- * @see api.yandex.ru/locator/
+ * @see http://api.yandex.ru/locator/
  */
-module.exports = new ApiMethod('geolocation')
+module.exports = new bla.ApiMethod('geolocation')
     .setDescription('Returns geolocation based on IP address')
     .addParam({
         name: 'ip',
@@ -38,6 +37,6 @@ module.exports = new ApiMethod('geolocation')
                 return json.position;
             })
             .fail(function () {
-                throw new ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
+                throw new bla.ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
             });
     });

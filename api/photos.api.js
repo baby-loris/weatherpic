@@ -1,5 +1,4 @@
-var ApiMethod = require('baby-loris-api/lib/api-method');
-var ApiError = require('baby-loris-api/lib/api-error');
+var bla = require('baby-loris-api');
 var ask = require('vow-asker');
 var config = require('../configs/current/api');
 
@@ -22,7 +21,7 @@ function getPhotoUrl(data) {
 /**
  * @see https://www.flickr.com/services/api/flickr.photos.search.html
  */
-module.exports = new ApiMethod('photos')
+module.exports = new bla.ApiMethod('photos')
     .setDescription('Returns photos of kittens using Flickr API')
     .addParam({
         name: 'text',
@@ -58,7 +57,7 @@ module.exports = new ApiMethod('photos')
                 var data = JSON.parse(response.data);
 
                 if (data.stat === 'fail') {
-                    throw new ApiError('FLICKR_ERROR', data.message);
+                    throw new bla.ApiError('FLICKR_ERROR', data.message);
                 }
 
                 return data.photos.photo.map(function (photo) {
