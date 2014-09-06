@@ -22,7 +22,7 @@ function getPhotoUrl(data) {
  * @see https://www.flickr.com/services/api/flickr.photos.search.html
  */
 module.exports = new bla.ApiMethod('photos')
-    .setDescription('Returns photos of kittens using Flickr API')
+    .setDescription('Returns photos using Flickr API')
     .addParam({
         name: 'text',
         descriptions: 'Text for searching'
