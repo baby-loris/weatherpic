@@ -23,7 +23,8 @@ var assets = {
             'node_modules/mustache/mustache.js',
             'node_modules/vow/vow.min.js',
             'node_modules/inherit/lib/inherit.js',
-            'node_modules/baby-loris-api/blocks/**/*.js'
+            'node_modules/baby-loris-api/blocks/baby-loris-api-error/*.js',
+            'node_modules/baby-loris-api/blocks/baby-loris-api/*.js'
         ],
         server: [
             'server/**/*.js',
