@@ -30,6 +30,9 @@ modules.define(
     ].join('');
 
     var PhotoView = inherit({
+        /**
+         * @param {Object} data
+         */
         __constructor: function (data) {
             this._domNode = $(Mustache.render(TEMPLATE, data));
         },
@@ -39,6 +42,9 @@ modules.define(
             this._domNode = null;
         },
 
+        /**
+         * @returns {jQuery}
+         */
         getDomNode: function () {
             return this._domNode;
         }

@@ -13,16 +13,7 @@ module.exports = {
 
         api.exec('geolocation', {ip: req.ip})
             .then(function (location) {
-                return api.exec('weather', {latitude: location.latitude, longitude: location.longitude})
-                    .then(function (weather) {
-                        api.exec('tags', {weather: weather})
-                            .then(function (tags) {
-                                d.resolve({
-                                    city: weather.name,
-                                    tags: tags
-                                });
-                            });
-                    });
+                api.exec('photos-by-location', location).then(d.resolve.bind(d));
             })
             .fail(function (error) {
                 d.resolve({

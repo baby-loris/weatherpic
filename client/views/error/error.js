@@ -3,12 +3,14 @@ modules.define(
     [
         'inherit',
         'jquery',
+        'baby-loris-api-error',
         'mustache'
     ],
     function (
         provide,
         inherit,
         $,
+        ApiError,
         Mustache
     ) {
 
@@ -20,12 +22,18 @@ modules.define(
         '</div>'
     ].join('');
 
+    var DEFAULT_ERROR = new ApiError(ApiError.INTERNAL_ERROR, 'Unknown error');
+
     /**
      * Error message.
      */
     var ErrorView = inherit({
-        __constructor: function (data) {
-            this._domNode = $(Mustache.render(TEMPLATE, data));
+        /**
+         * @param {ApiError} error
+         */
+        __constructor: function (error) {
+            error = error || DEFAULT_ERROR;
+            this._domNode = $(Mustache.render(TEMPLATE, error));
         },
 
         destruct: function () {
@@ -33,6 +41,9 @@ modules.define(
             this._domNode = null;
         },
 
+        /**
+         * @returns {jQuery}
+         */
         getDomNode: function () {
             return this._domNode;
         }

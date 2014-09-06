@@ -4,6 +4,7 @@ modules.define(
         'inherit',
         'api',
         'vow',
+        'config',
         'baby-loris-api-error'
     ],
     function (
@@ -11,6 +12,7 @@ modules.define(
         inherit,
         api,
         vow,
+        config,
         ApiError
     ) {
 
@@ -20,9 +22,12 @@ modules.define(
      * It's an wrapper for photos Api.
      */
     var PhotoProvider = inherit({
-        __constructor: function () {
-            this._loadedPhotos = [];
-            this._page = 1;
+        /**
+         * @param {Object[]} initialPhotos List of preload photos.
+         */
+        __constructor: function (initialPhotos) {
+            this._loadedPhotos = initialPhotos || [];
+            this._page = initialPhotos ? 2 : 1; // next page to load
         },
 
         /**
@@ -74,5 +79,5 @@ modules.define(
         }
     });
 
-    provide(new PhotoProvider());
+    provide(PhotoProvider);
 });

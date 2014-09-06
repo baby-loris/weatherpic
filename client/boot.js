@@ -1,5 +1,4 @@
-modules.require(['app'], function (App) {
-    var app = new App(document.getElementById('container'));
-
+modules.require(['app', 'jquery'], function (App, $) {
+    var app = new App($('#container'));
     app.start();
 });

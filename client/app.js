@@ -9,7 +9,7 @@ modules.define(
     function (
         provide,
         inherit,
-        dataProvider,
+        DataProvider,
         PhotoController,
         ErrorView
     ) {
@@ -20,6 +20,8 @@ modules.define(
         },
 
         start: function () {
+            var dataProvider = this._dataProvider = new DataProvider();
+
             dataProvider.get()
                 .then(this._onDataLoad.bind(this))
                 .fail(this._onFailed.bind(this));

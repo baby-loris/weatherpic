@@ -34,30 +34,21 @@ modules.define(
                     }
 
                     // If the user location isn't detected by external API, use browser geolocation api
-                    return error && error.type === 'GEOLOCATION_ERROR' ?
+                    return error ?
                         this._getDataBasedOnUserLocation() :
                         config;
                 }.bind(this));
         },
 
+        /**
+         * @returns {vow.Promise}
+         */
         _getDataBasedOnUserLocation: function () {
             return geolocation.get().then(function (location) {
-                return api.exec('weather', {latitude: location.latitude, longitude: location.longitude})
-                    .then(function (weather) {
-                        return api.exec('tags', {weather: weather})
-                            .then(function (tags) {
-                                return {
-                                    city: weather.name || 'Your location',
-                                    tags: tags
-                                };
-                            });
-                    })
-                    .fail(function (error) {
-                        throw new ApiError(error.type, error.message);
-                    });
+                return api.exec('photos-by-location', location);
             });
         }
     });
 
-    provide(new DataProvider());
+    provide(DataProvider);
 });
