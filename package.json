@@ -45,8 +45,8 @@
     "git-hooks": "0.0.7"
   },
   "scripts": {
-    "postinstall": "gulp build environment",
-    "start": "gulp dev",
+    "postinstall": "gulp environment",
+    "start": "gulp build dev",
     "test": "gulp build test"
   }
 }
