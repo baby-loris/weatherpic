@@ -5,7 +5,7 @@ modules.define(
         'config',
         'vow',
         'geolocation',
-        'baby-loris-api-error',
+        'bla-error',
         'api'
     ],
     function (

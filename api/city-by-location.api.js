@@ -1,4 +1,4 @@
-var bla = require('baby-loris-api');
+var bla = require('bla');
 var ask = require('vow-asker');
 var config = require('../configs/current/api');
 

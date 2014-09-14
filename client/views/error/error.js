@@ -3,7 +3,7 @@ modules.define(
     [
         'inherit',
         'jquery',
-        'baby-loris-api-error',
+        'bla-error',
         'mustache'
     ],
     function (

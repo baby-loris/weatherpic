@@ -5,7 +5,7 @@ modules.define(
         'api',
         'vow',
         'config',
-        'baby-loris-api-error'
+        'bla-error'
     ],
     function (
         provide,

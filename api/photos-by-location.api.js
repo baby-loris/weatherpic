@@ -1,4 +1,4 @@
-var ApiMethod = require('baby-loris-api').ApiMethod;
+var ApiMethod = require('bla').ApiMethod;
 var vow = require('vow');
 
 module.exports = new ApiMethod('photos-by-location')

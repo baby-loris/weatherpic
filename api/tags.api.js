@@ -1,4 +1,4 @@
-var ApiMethod = require('baby-loris-api').ApiMethod;
+var ApiMethod = require('bla').ApiMethod;
 
 /**
  * List of extra tags should be used for photos search.
