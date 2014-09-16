@@ -14,14 +14,18 @@ modules.define(
         ErrorView
     ) {
 
+    var DEFAULT_SLIDESHOW_TIMEOUT = 5000;
+
     var PhotoController = inherit({
         /**
          * @param {jQuery} parentDomNode
          * @param {Object} data
+         * @param {Object} options
          */
-        __constructor: function (parentDomNode, data) {
+        __constructor: function (parentDomNode, data, options) {
             this._parentDomNode = parentDomNode;
             this._data = data;
+            this._options = options || {};
             this._photoProvider = new PhotoProvider(data.photos);
 
             this._showNextPhoto();
@@ -49,6 +53,10 @@ modules.define(
             this._view = new PhotoView(data);
             this._view.getDomNode().appendTo(this._parentDomNode);
             this._view.getDomNode().find('.photo__reload').on('click', this._showNextPhoto.bind(this));
+
+            if (this._options.autoplay) {
+                setTimeout(this._showNextPhoto.bind(this), this._options.slideshowTimeout || DEFAULT_SLIDESHOW_TIMEOUT);
+            }
         },
 
         /**

@@ -14,6 +14,11 @@ modules.define(
         ErrorView
     ) {
 
+    function getQueryParam(name) {
+        var value = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)(&?)', 'i'));
+        return value ? value[1] : value;
+    }
+
     var Application = inherit({
         __constructor: function (parentDomNode) {
             this._parentDomNode = parentDomNode;
@@ -28,7 +33,9 @@ modules.define(
         },
 
         _onDataLoad: function (data) {
-            this._photo = new PhotoController(this._parentDomNode, data);
+            this._photo = new PhotoController(this._parentDomNode, data, {
+                autoplay: getQueryParam('autoplay') === 'yes'
+            });
         },
 
         _onFailed: function (error) {
