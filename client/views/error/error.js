@@ -32,7 +32,7 @@ modules.define(
          * @param {ApiError} error
          */
         __constructor: function (error) {
-            error = error || DEFAULT_ERROR;
+            error = error && error.message ? error : DEFAULT_ERROR;
             this._domNode = $(Mustache.render(TEMPLATE, error));
         },
 
