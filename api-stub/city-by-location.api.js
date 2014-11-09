@@ -1,5 +1,11 @@
-module.exports = require('../api/city-by-location.api.js')
-    .setAction(function () {
+var bla = require('bla');
+var method = require('../api/city-by-location.api.js');
+
+module.exports = new bla.ApiMethod({
+    name: method.getName(),
+    description: method.getDescription(),
+    params: method.getParamsDeclarations(),
+    action: function () {
         return {
             Point: {
                 pos: '37.619899 55.753676'
@@ -36,4 +42,5 @@ module.exports = require('../api/city-by-location.api.js')
             },
             name: 'Moscow'
         };
-    });
+    }
+});

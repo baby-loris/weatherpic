@@ -1,5 +1,11 @@
-module.exports = require('../api/weather.api.js')
-    .setAction(function () {
+var bla = require('bla');
+var method = require('../api/weather.api.js');
+
+module.exports = new bla.ApiMethod({
+    name: method.getName(),
+    description: method.getDescription(),
+    params: method.getParamsDeclarations(),
+    action: function () {
         return {
             coord: {
                 lon: 37.62,
@@ -39,4 +45,5 @@ module.exports = require('../api/weather.api.js')
             name: 'Moskva',
             cod: 200
         };
-    });
+    }
+});

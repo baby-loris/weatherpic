@@ -2,19 +2,20 @@ var bla = require('bla');
 var ask = require('vow-asker');
 var config = require('../configs/current/api');
 
-module.exports = new bla.ApiMethod('city-by-location')
-    .setDescription('Returns information about city based on coordinates')
-    .addParam({
-        name: 'latitude',
-        description: 'Latitude',
-        required: true
-    })
-    .addParam({
-        name: 'longitude',
-        description: 'Longtitude',
-        required: true
-    })
-    .setAction(function (params) {
+module.exports = new bla.ApiMethod({
+    name: 'city-by-location',
+    description: 'Returns information about city based on coordinates',
+    params: {
+        latitude: {
+            description: 'Latitude',
+            required: true
+        },
+        longitude: {
+            description: 'Longtitude',
+            required: true
+        }
+    },
+    action: function (params) {
         return ask({
             url: config.yandexGeocoder.host,
             query: {
@@ -36,4 +37,5 @@ module.exports = new bla.ApiMethod('city-by-location')
 
                 return firstResult.GeoObject;
             });
-    });
+    }
+});

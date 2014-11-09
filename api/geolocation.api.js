@@ -5,14 +5,16 @@ var config = require('../configs/current/api');
 /**
  * @see http://api.yandex.ru/locator/
  */
-module.exports = new bla.ApiMethod('geolocation')
-    .setDescription('Returns geolocation based on IP address')
-    .addParam({
-        name: 'ip',
-        description: 'IP address',
-        required: true
-    })
-    .setAction(function (params) {
+module.exports = new bla.ApiMethod({
+    name: 'geolocation',
+    description: 'Returns geolocation based on IP address',
+    params: {
+        ip: {
+            description: 'IP address',
+            required: true
+        }
+    },
+    action: function (params) {
         return ask({
             url: config.yandexLocator.host,
             method: 'POST',
@@ -39,4 +41,5 @@ module.exports = new bla.ApiMethod('geolocation')
             .fail(function () {
                 throw new bla.ApiError('GEOLOCATION_ERROR', 'Your city isn\'t found');
             });
-    });
+    }
+});

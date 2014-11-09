@@ -14,19 +14,20 @@ function convertToCelsius(temperature) {
  * @see http://openweathermap.org/current
  * @see http://openweathermap.org/weather-data#current
  */
-module.exports = new bla.ApiMethod('weather')
-    .setDescription('Returns a weather forecast for the coordinates')
-    .addParam({
-        name: 'latitude',
-        description: 'Latitude',
-        required: true
-    })
-    .addParam({
-        name: 'longitude',
-        description: 'Longtitude',
-        required: true
-    })
-    .setAction(function (params) {
+module.exports = new bla.ApiMethod({
+    name: 'weather',
+    description: 'Returns a weather forecast for the coordinates',
+    params: {
+        latitude: {
+            description: 'Latitude',
+            required: true
+        },
+        longitude: {
+            description: 'Longtitude',
+            required: true
+        }
+    },
+    action: function (params) {
         return ask({
             url: config.openWeatherMapApi.host,
             query: {
@@ -49,4 +50,5 @@ module.exports = new bla.ApiMethod('weather')
 
             return json;
         });
-    });
+    }
+});

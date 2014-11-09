@@ -1,19 +1,20 @@
 var ApiMethod = require('bla').ApiMethod;
 var vow = require('vow');
 
-module.exports = new ApiMethod('photos-by-location')
-    .setDescription('Returns photos base on passed location')
-    .addParam({
-        name: 'latitude',
-        description: 'Latitude',
-        required: true
-    })
-    .addParam({
-        name: 'longitude',
-        description: 'Longtitude',
-        required: true
-    })
-    .setAction(function (params, request, api) {
+module.exports = new ApiMethod({
+    name: 'photos-by-location',
+    description: 'Returns photos base on passed location',
+    params: {
+        latitude: {
+            description: 'Latitude',
+            required: true
+        },
+        longitude: {
+            description: 'Longtitude',
+            required: true
+        }
+    },
+    action: function (params, req, api) {
         return vow.all([
             api.exec('weather', params),
             api.exec('city-by-location', params)
@@ -29,4 +30,5 @@ module.exports = new ApiMethod('photos-by-location')
                     });
                 });
             });
-    });
+    }
+});

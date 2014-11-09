@@ -24,17 +24,20 @@ function getTagsByWeather(weather) {
     ].filter(Boolean);
 }
 
-module.exports = new ApiMethod('tags')
-    .setDescription('Generates list of tags based on the weather data')
-    .addParam({
-        name: 'weather',
-        type: 'Object',
-        description: 'Weather data from weather.api.js',
-        required: true
-    })
-    .setAction(function (params) {
+module.exports = new ApiMethod({
+    name: 'tags',
+    description: 'Generates list of tags based on the weather data',
+    params: {
+        weather: {
+            type: 'Object',
+            description: 'Weather data from weather.api.js',
+            required: true
+        }
+    },
+    action: function (params) {
         return [].concat(
             EXTRA_TAGS,
             getTagsByWeather(params.weather)
         );
-    });
+    }
+});

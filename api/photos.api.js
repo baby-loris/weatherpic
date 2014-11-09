@@ -21,23 +21,23 @@ function getPhotoUrl(data) {
 /**
  * @see https://www.flickr.com/services/api/flickr.photos.search.html
  */
-module.exports = new bla.ApiMethod('photos')
-    .setDescription('Returns photos using Flickr API')
-    .addParam({
-        name: 'text',
-        descriptions: 'Text for searching'
-    })
-    .addParam({
-        name: 'tags',
-        type: 'Array',
-        descriptions: 'Photos with one or more of the tags listed will be returned'
-    })
-    .addParam({
-        name: 'page',
-        type: 'Array',
-        descriptions: 'Number page of results'
-    })
-    .setAction(function (params) {
+module.exports = new bla.ApiMethod({
+    name: 'photos',
+    description: 'Returns photos using Flickr API',
+    params: {
+        text: {
+            descriptions: 'Text for searching'
+        },
+        tags: {
+            type: 'Array',
+            descriptions: 'Photos with one or more of the tags listed will be returned'
+        },
+        page: {
+            type: 'Number',
+            descriptions: 'Number page of results'
+        }
+    },
+    action: function (params) {
         return ask({
             url: config.flickrPhotoApi.host,
             query: {
@@ -67,4 +67,5 @@ module.exports = new bla.ApiMethod('photos')
                     };
                 });
             });
-    });
+    }
+});
