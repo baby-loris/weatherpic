@@ -13,7 +13,10 @@ module.exports = {
 
         api.exec('geolocation', {ip: req.ip})
             .then(function (location) {
-                api.exec('photos-by-location', location).then(d.resolve.bind(d));
+                return api.exec('photos-by-location', {
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                }).then(d.resolve.bind(d));
             })
             .fail(function (error) {
                 d.resolve({

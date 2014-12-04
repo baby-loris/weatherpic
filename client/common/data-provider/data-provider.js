@@ -45,7 +45,10 @@ modules.define(
          */
         _getDataBasedOnUserLocation: function () {
             return geolocation.get().then(function (location) {
-                return api.exec('photos-by-location', location);
+                return api.exec('photos-by-location', {
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                });
             });
         }
     });

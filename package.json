@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bla": "0.0.15",
+    "bla": "^1.0.0",
     "body-parser": "1.5.2",
     "del": "0.1.1",
     "express": "4.6.1",
