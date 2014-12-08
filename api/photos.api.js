@@ -26,15 +26,15 @@ module.exports = new bla.ApiMethod({
     description: 'Returns photos using Flickr API',
     params: {
         text: {
-            descriptions: 'Text for searching'
+            description: 'Text for searching'
         },
         tags: {
             type: 'Array',
-            descriptions: 'Photos with one or more of the tags listed will be returned'
+            description: 'Photos with one or more of the tags listed will be returned'
         },
         page: {
             type: 'Number',
-            descriptions: 'Number page of results'
+            description: 'Number page of results'
         }
     },
     action: function (params) {
