@@ -49,6 +49,7 @@ module.exports = new bla.ApiMethod({
                 format: 'json',
                 nojsoncallback: 1,
                 page: params.page || 1,
+                is_getty: true,
                 per_page: 10
             },
             timeout: config.timeout
