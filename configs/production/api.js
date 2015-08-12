@@ -4,7 +4,7 @@ module.exports = {
         key: 'ACtg_1MBAAAAxnk2egMAP1f6oolGj4d4UewZqpnozpbWkpcAAAAAAAAAAACENYjK6hlkCqvhIYmbak2bS8X8OQ=='
     },
     yandexGeocoder: {
-        host: 'http://geocode-maps.yandex.ru/1.x/'
+        host: 'https://geocode-maps.yandex.ru/1.x/'
     },
     openWeatherMapApi: {
         host: 'http://api.openweathermap.org/data/2.5/weather',
