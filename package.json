@@ -47,6 +47,7 @@
     "git-hooks": "1.0.2"
   },
   "scripts": {
+    "preinstall": "mkdir -p .git",
     "postinstall": "gulp build environment",
     "start": "gulp build dev",
     "test": "gulp build test"
