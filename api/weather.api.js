@@ -33,6 +33,7 @@ module.exports = new bla.ApiMethod({
             query: {
                 lat: params.latitude,
                 lon: params.longitude,
+                appid: '2cf1ffcfe7564c8c1583eca95384bd9e',
                 format: 'json'
             },
             timeout: config.timeout
