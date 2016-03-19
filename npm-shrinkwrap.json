@@ -849,9 +849,8 @@
       }
     },
     "git-hooks": {
-      "version": "0.0.7",
-      "from": "git-hooks@0.0.7",
-      "resolved": "https://registry.npmjs.org/git-hooks/-/git-hooks-0.0.7.tgz"
+      "version": "1.0.2",
+      "from": "git-hooks@1.0.2"
     },
     "gulp": {
       "version": "3.8.6",
@@ -4901,25 +4900,25 @@
                       "from": "is-property@^1.0.0",
                       "resolved": "https://registry.npmjs.org/is-property/-/is-property-1.0.2.tgz"
                     },
-                    "is-typedarray": {
-                      "version": "1.0.0",
-                      "from": "is-typedarray@~1.0.0",
-                      "resolved": "https://registry.npmjs.org/is-typedarray/-/is-typedarray-1.0.0.tgz"
-                    },
                     "isarray": {
                       "version": "0.0.1",
                       "from": "isarray@0.0.1",
                       "resolved": "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz"
                     },
-                    "isstream": {
-                      "version": "0.1.2",
-                      "from": "isstream@~0.1.2",
-                      "resolved": "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
+                    "is-typedarray": {
+                      "version": "1.0.0",
+                      "from": "is-typedarray@~1.0.0",
+                      "resolved": "https://registry.npmjs.org/is-typedarray/-/is-typedarray-1.0.0.tgz"
                     },
                     "jodid25519": {
                       "version": "1.0.2",
                       "from": "jodid25519@>=1.0.0 <2.0.0",
                       "resolved": "https://registry.npmjs.org/jodid25519/-/jodid25519-1.0.2.tgz"
+                    },
+                    "isstream": {
+                      "version": "0.1.2",
+                      "from": "isstream@~0.1.2",
+                      "resolved": "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz"
                     },
                     "jsbn": {
                       "version": "0.1.0",
@@ -4956,15 +4955,15 @@
                       "from": "lodash._createpadding@^3.0.0",
                       "resolved": "https://registry.npmjs.org/lodash._createpadding/-/lodash._createpadding-3.6.1.tgz"
                     },
-                    "lodash.pad": {
-                      "version": "3.3.0",
-                      "from": "lodash.pad@^3.0.0",
-                      "resolved": "https://registry.npmjs.org/lodash.pad/-/lodash.pad-3.3.0.tgz"
-                    },
                     "lodash._root": {
                       "version": "3.0.0",
                       "from": "lodash._root@^3.0.0",
                       "resolved": "https://registry.npmjs.org/lodash._root/-/lodash._root-3.0.0.tgz"
+                    },
+                    "lodash.pad": {
+                      "version": "3.3.0",
+                      "from": "lodash.pad@^3.0.0",
+                      "resolved": "https://registry.npmjs.org/lodash.pad/-/lodash.pad-3.3.0.tgz"
                     },
                     "lodash.padleft": {
                       "version": "3.1.1",

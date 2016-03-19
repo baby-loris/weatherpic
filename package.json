@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "errorhandler": "1.1.1",
-    "git-hooks": "0.0.7"
+    "git-hooks": "1.0.2"
   },
   "scripts": {
     "postinstall": "gulp build environment",
