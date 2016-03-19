@@ -1,5 +1,6 @@
 # weatherpic [![Build Status](https://travis-ci.org/baby-loris/weatherpic.svg?branch=master)](https://travis-ci.org/baby-loris/weatherpic)
 ![Weatherpic](weatherpic.png)
+
 Weatherpic is an example of using [bla](https://github.com/baby-loris/bla).
 
 The application detects your geolocation by IP address, then checks out weather in your city and finally shows you a photo from Flickr API based on weather in your city.
